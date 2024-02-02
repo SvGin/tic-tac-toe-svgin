@@ -1,3 +1,9 @@
-# Your code goes here.
-# You can delete these comments, but do not change the name of this file
-# Write your code to expect a terminal of 80 characters wide and 24 rows high
+
+def play_game():
+    """
+    This function contains all other needed functions to start and play the game
+    """
+
+
+#Call main funcion, start the game
+play_game()
