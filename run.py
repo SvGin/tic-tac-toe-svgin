@@ -80,6 +80,23 @@ def move(board, player, row, col):
         print("Please try again. This cell is already occupied \n")
         new_row, new_col = player_move(player)
         move(board, player, new_row. new_col)
+
+    
+def player_swap(current_player, player_first, player_second):
+    """
+    Players to take turns after move is recogised on the board
+    """
+    return player_second if current_player == player_first else player_first
+
+
+def full_board(board):
+    """
+    Check of the bard is full
+    """
+    for row in board:
+        if " " in row:
+            return False
+        return True
             
 
 
