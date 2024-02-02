@@ -12,22 +12,22 @@ def introduction():
     print("Good Luck! :)\n")
 
 
-def player_symbol():
+def player_symbols():
     """
     Player 1 will choose the symbol form X or O
     Will return error message is other symbole is selected
     """
-    player1 = input("Please choose X or O: \n").upper()
+    player1 = input("Please Choose X or O: \n").upper()
     while player1 not in ["X", "O"]:
-        print("Invalid input, please choose X or O\n")
-        player1 = input("Please choose X or O: \n").upper()
+        print("Invalid input, please choose from X , O\n")
+        player1 = input("Please Choose X or O: \n").upper()
 
     if player1 == "X":
         player2 = "O"
     else:
         player2 = "X"
 
-    return player1, player2    
+    return player1, player2   
 
 
 def print_board(board):
@@ -57,15 +57,15 @@ def player_move(player):
     """
     while True:
         try:
-            row = int(input(f"Player {player}, please anter row (0, 1, 2) \n"))
-            col = int(input(f"Player {player}, please anter column (0, 1, 2) \n"))
+            row = int(input(f"Player {player}, please enter row (0, 1, or 2)\n"))
+            col = int(input(f"Player {player}, please enter column (0, 1, or 2)\n"))
 
             if out_of_board(row, col):
                 return row, col
             else:
-                print("Out of range. Please choose 0, 1 or 2 \n")
+                print("Out of range. Please choose beween 0 and 2\n")
         except ValueError:
-            print("Invalid input. Enter 0, 1 or 2. Please try again! \n")
+            print("Invalid input. Please enter a number 0, 1 or 2. Please try again!\n")
 
 
 def move(board, player, row, col):
@@ -79,14 +79,15 @@ def move(board, player, row, col):
     else:
         print("Please try again. This cell is already occupied \n")
         new_row, new_col = player_move(player)
-        move(board, player, new_row. new_col)
+        move(board, player, new_row, new_col)
 
     
 def player_swap(current_player, player_first, player_second):
     """
-    Players to take turns after move is recogised on the board
+    Players to take turns after move registerd on the board
     """
     return player_second if current_player == player_first else player_first
+
 
 
 def full_board(board):
@@ -97,6 +98,30 @@ def full_board(board):
         if " " in row:
             return False
         return True
+
+
+def if_winner(board):
+    """
+    Checking rows, colums and dioganals for the winner
+    """
+    # Will heck rows
+    for row in board:
+        if row[0] == row[1] == row[2] and row[0] != ' ':
+            return row[0]
+
+    # Will check columns
+    for col in range(3):
+        if board[0][col] == board[1][col] == board[2][col] and board[0][col] != ' ':
+            return board[0][col]
+
+    # Will check both diagonals
+    if board[0][0] == board[1][1] == board[2][2] and board[0][0] != ' ':
+        return board[0][0]
+    if board[0][2] == board[1][1] == board[2][0] and board[0][2] != ' ':
+        return board[0][2]
+
+    return None
+    
             
 
 
@@ -105,7 +130,7 @@ def play_game():
     This function contains all other needed functions to start and play the game
     """
     introduction()
-    player1, player2 = player_symbol()
+    player1, player2 = player_symbols()
     board = [[' ' for _ in range(3)] for _ in range(3)]
     current_player = player1
 
@@ -115,8 +140,20 @@ def play_game():
         move(board, current_player, row, col)
         winner = if_winner(board)
 
-        
-    current_player = player_swap(current_player, player1, player2)
+
+        if winner:
+            print_board(board)
+            print(f"Player {winner} wins!")
+
+            break
+
+        if full_board(board):
+            print_board(board)
+            print("Its a tie!")
+
+            break
+            
+        current_player = player_swap(current_player, player1, player2)
 
 
 
