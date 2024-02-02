@@ -49,7 +49,8 @@ def play_game():
     """
     introduction()
     player1, player2 = player_symbol()
-
+    board = [[' ' for _ in range(3)] for _ in range(3)]
+    print_board(board)
 
 #Call main funcion, start the game
 play_game()
