@@ -40,7 +40,18 @@ def print_board(board):
         if i < 2:
             print("-" * 10)
     
-
+def player_move(player):
+    """
+    Player to imput row and column for the move
+    Check if the move seleceted by the player is inside the board
+    Check if number entered and not a letter or other symbol
+    To display the error message if needed criteria is not met
+    """
+    while True:
+        try:
+            row = int(input(f"Player {player}, please anter row (0, 1, 2) \n"))
+            col = int(input(f"Player {player}, please anter column (0, 1, 2) \n"))
+            
 
 
 def play_game():
