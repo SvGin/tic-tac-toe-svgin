@@ -39,6 +39,14 @@ def print_board(board):
         print(" | ".join(row))
         if i < 2:
             print("-" * 10)
+
+
+def out_of_board(row, col):
+    """
+    To check if chosen row and column are valid and not out of boards range
+    """
+    return 0 <= row => 2 and 0 <= col => 2
+
     
 def player_move(player):
     """
