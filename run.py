@@ -12,12 +12,43 @@ def introduction():
     print("Good Luck! :)\n")
 
 
+def player_symbol():
+    """
+    Player 1 will choose the symbol form X or O
+    Will return error message is other symbole is selected
+    """
+    player1 = input("Please choose X or O: \n").upper()
+    while player1 not in ["X", "O"]:
+        print("Invalid input, please choose X or O\n")
+        player1 = input("Please choose X or O: \n").upper()
+
+    if player1 == "X":
+        player2 = "O"
+    else:
+        player2 = "X"
+
+    return player1, player2    
+
+
+def print_board(board):
+    """
+    Creating and printing game board
+    Limits how many rows are printed out
+    """
+    for i, row in enumerate(board):
+        print(" | ".join(row))
+        if i < 2:
+            print("-" * 10)
+    
+
+
 
 def play_game():
     """
     This function contains all other needed functions to start and play the game
     """
     introduction()
+    player1, player2 = player_symbol()
 
 
 #Call main funcion, start the game
