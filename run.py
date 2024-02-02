@@ -45,7 +45,7 @@ def out_of_board(row, col):
     """
     To check if chosen row and column are valid and not out of boards range
     """
-    return 0 <= row => 2 and 0 <= col => 2
+    return 0 <= row <= 2 and 0 <= col <= 2
 
     
 def player_move(player):
@@ -59,6 +59,13 @@ def player_move(player):
         try:
             row = int(input(f"Player {player}, please anter row (0, 1, 2) \n"))
             col = int(input(f"Player {player}, please anter column (0, 1, 2) \n"))
+
+            if out_of_board(row, col):
+                return row, col
+            else:
+                print("Out of range. Please choose 0, 1 or 2 \n")
+        except ValueError:
+            print("Invalid input. Enter 0, 1 or 2. Please try again! \n")
             
 
 
@@ -70,6 +77,8 @@ def play_game():
     player1, player2 = player_symbol()
     board = [[' ' for _ in range(3)] for _ in range(3)]
     print_board(board)
+    current_player = player1
+    row, col = player_move(current_player)
 
 #Call main funcion, start the game
 play_game()
