@@ -66,6 +66,20 @@ def player_move(player):
                 print("Out of range. Please choose 0, 1 or 2 \n")
         except ValueError:
             print("Invalid input. Enter 0, 1 or 2. Please try again! \n")
+
+
+def move(board, player, row, col):
+    """
+    To recognise players move
+    To let player know if the cell is alredy occupied
+    and if so ask to enter row and column again
+    """
+    if board[row][col] == " ":
+        board[row][col] = player
+    else:
+        print("Please try again. This cell is already occupied \n")
+        new_row, new_col = player_move(player)
+        move(board, player, new_row. new_col)
             
 
 
@@ -79,6 +93,7 @@ def play_game():
     print_board(board)
     current_player = player1
     row, col = player_move(current_player)
+    move(board, current_player, row, col)
 
 #Call main funcion, start the game
 play_game()
