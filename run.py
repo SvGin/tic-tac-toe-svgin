@@ -107,10 +107,18 @@ def play_game():
     introduction()
     player1, player2 = player_symbol()
     board = [[' ' for _ in range(3)] for _ in range(3)]
-    print_board(board)
     current_player = player1
-    row, col = player_move(current_player)
-    move(board, current_player, row, col)
+
+    while True:
+        print_board(board)
+        row, col = player_move(current_player)
+        move(board, current_player, row, col)
+        winner = if_winner(board)
+
+        
+    current_player = player_swap(current_player, player1, player2)
+
+
 
 #Call main funcion, start the game
 play_game()
