@@ -7,7 +7,7 @@ def introduction():
     print("1. Game is played on a 3x3 board")
     print("2. Players choose the X or O for their symbol")
     print("3. Players take turns to choose the cell on the game board")
-    print("4. Place three of the symbols in a row, column or dioganal and win")
+    print("4. Place three of the symbols in a row, column or diagonals and win")
     print("5. If the entire board is filled, the game is a draw.\n")
     print("Good Luck! :)\n")
 
@@ -100,7 +100,7 @@ def full_board(board):
 
 def if_winner(board):
     """
-    Checking rows, colums and dioganals for the winner
+    Checking rows, colums and diagonals for the winner
     """
     # Will heck rows
     for row in board:
