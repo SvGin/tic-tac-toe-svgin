@@ -24,8 +24,10 @@ Two players are requred to play the game, The winner is the first player to put 
  - Prints the tic tac toe game grid
  - Lets player to choose the row and column on the grid and places the chosen symbol on the game grid
  - Switched the players after every move
+ - Will check row, colums and diogonals for the winner and display the winner as soon as the criteria to become one is achieved
+ - If the board is full and there is no winner will disply a message "Its a tie"
  - Input validation
    - Error message will appear if player will try to choose something other then X or O for their symbol
    - Error message appears if not a number entered when choosing row and column
-   - Out of range massage appears if player enetered number greater then 2
+   - Out of range massage appears if player enetered number greater then 2 when coosing row or column.
    
