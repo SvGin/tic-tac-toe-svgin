@@ -1,32 +1,31 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# [Tic-Tac-Toe](https://tic-tac-toe-svgint-bf602e1b6c57.herokuapp.com/)
 
-Welcome,
+Tic-Tac-Toe is a Python termonal game , which run in mock terminal in Heroku.
+Two players are requred to play the game, The winner is the first player to put three of thier symbols in the row, column or dioganal. If non of the player achieve it its a draw.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **March 14, 2023**
+[Click here or on the title of README.md to access live version of my project](https://tic-tac-toe-svgint-bf602e1b6c57.herokuapp.com/)
 
-## Reminders
+![Different screen devices with Tic-Tac-Toe](gallery/responsive.png)
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+## How to play
 
-## Creating the Heroku app
+1. Game is played on a 3x3 board
+2. Players choose the X or O for their symbol.
+3. Players take turns to choose the cell on the game board.
+4. Place three of the symbols in a row, column or dioganal and win
+5. If the entire board is filled and there is no winner, the game is a draw. <br>
+    Good Luck! :)
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+## Features
 
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
----
-
-Happy coding!
+### Existing Features
+ - Displays the set of rules of the game
+ - Lets 1st player to choose X or O and assignes the other symbol to 2nd player
+ - Prints the tic tac toe game grid
+ - Lets player to choose the row and column on the grid and places the chosen symbol on the game grid
+ - Switched the players after every move
+ - Input validation
+   - Error message will appear if player will try to choose something other then X or O for their symbol
+   - Error message appears if not a number entered when choosing row and column
+   - Out of range massage appears if player enetered number greater then 2
+   
